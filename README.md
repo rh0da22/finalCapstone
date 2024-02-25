@@ -14,6 +14,7 @@ Enter the necessary financial details as prompted.
 View the calculated results displayed on the screen.
 
 Example:
+
 <img width="630" alt="Screenshot 2024-02-25 at 20 50 16" src="https://github.com/rh0da22/finalCapstone/assets/115512194/4b04e0a6-c5f2-46b8-b77c-333d6b10ba02">
 
 Features:

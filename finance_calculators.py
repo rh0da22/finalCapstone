@@ -1,4 +1,4 @@
-import math
+import math # Needed for financial calculations
 
 while True:
     print("\n Investment - to calculate the amount of interest you'll earn on your investment")
@@ -39,6 +39,7 @@ while True:
         monthly_ir = (ir/100)/12
         repayment = (monthly_ir*house_value)/(1-((1+monthly_ir)**(-months)))
 
+        # Displays the monthly repay amount
         print(f"\n You will have to repay £{repayment:.2f} each month.")
 
     else:
@@ -47,6 +48,7 @@ while True:
 
     print("-" * 60) 
 
+    # Gives user option to do another calculation or exit the loop.
     another = input("Would you like to do another bond or investment calculation? Enter Yes or No: ").lower()
     if another != "yes":
         print("Goodbye!")

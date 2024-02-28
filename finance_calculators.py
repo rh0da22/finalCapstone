@@ -7,6 +7,7 @@ while True:
     # The user can enter either investment or bond. The answer will be case insensitive.
     answer = input("\n Enter either 'investment' or 'bond' from the menu above to proceed: ").lower()
 
+    # Validate user input
     while answer not in ["investment", "bond"]:
         print("Sorry, I don't recognise your response. Please enter either 'investment' or 'bond'.")
         answer = input("Enter either 'investment' or 'bond' from the menu above to proceed: ").lower()
@@ -18,8 +19,22 @@ while True:
         ir = float(input("Enter the interest rate: "))
         years = int(input("Enter the number of years you plan to invest for: "))
         interest_type = input("Do you want 'simple' or 'compound' interest?: ").lower()
+    
+        # Validate numeric inputs
+        try:
+            principal = float(principal)
+            ir = float(ir)
+            years = int(years)
+        except ValueError:
+            print("Invalid input. Please enter numeric values for principal, interest rate, and years.")
+            continue
 
-    # The calculation is worked out based on the interest type then displayed. An error message is printed if an invalid interest type is entered.
+        # Validate interest type
+        while interest_type not in ["simple", "compound"]:
+            print("Invalid interest type. Please enter either 'simple' or 'compound'.")
+            interest_type = input("Do you want 'simple' or 'compound' interest?: ").lower()
+
+        # The calculation is worked out based on the interest type then displayed. An error message is printed if an invalid interest type is entered.
         if interest_type == "simple":
             interest = principal*(1+((ir/100)*years))
     
@@ -36,6 +51,16 @@ while True:
         house_value = float(input("\n Enter thr present value of the house in £: "))
         ir = float(input(" Enter the interest rate: "))
         months = int(input(" Enter the number of months you plan to take to repay: "))
+        
+        # Validate numeric inputs
+        try:
+            house_value = float(house_value)
+            ir = float(ir)
+            months = int(months)
+        except ValueError:
+            print("Invalid input. Please enter numeric values for house value, interest rate, and months.")
+            continue
+        
         monthly_ir = (ir/100)/12
         repayment = (monthly_ir*house_value)/(1-((1+monthly_ir)**(-months)))
 
